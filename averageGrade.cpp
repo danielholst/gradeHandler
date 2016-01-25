@@ -18,24 +18,18 @@ struct course{
 };
 
 //display all courses in database
+//val is used to only show a specific grade
 void display(course DB[], int howMany, int val)
 {
     
     for (int i = 0; i < howMany; i++)
     {
-        if(val == 3)
-        {
-            if(DB[i].grade != 3) continue;
-        }
-        if(val == 4)
-        {
-            if(DB[i].grade != 4) continue;
-        }
-        if(val == 5)
-        {
-            if(DB[i].grade != 5) continue;
-
-        }
+        if(val == 3 && DB[i].grade != 3) continue;
+        
+        if(val == 4 && DB[i].grade != 4) continue;
+        
+        if(val == 5 && DB[i].grade != 5) continue;
+        
         cout << DB[i].grade << "   " << DB[i].courseName << endl;
     }
 }
